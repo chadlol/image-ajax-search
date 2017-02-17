@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP/AJAX App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<style>
+  div {
+    width: 600px;
+    text-align: center;
+    margin:auto;
+  }
+</style>
+<body>
+
+<div>
+<img id='img-box' src='' height='400'>
+<br/>
+<input type="text" id="search-query">
+<input type="submit" id="search-button" value="Search"><br>
+<small>Search for an image</small>
+</div>
+
+<script>
+$('#search-button').on('click',function(e){
+    var searchQuery = $('#search-query').val();
+    $('#img-box').attr('src', 'load.gif');
+    $.ajax({
+        type: "POST",
+        data: {search:searchQuery},
+        url: "get_image_url.php",
+        success: function(data){
+            if(data){
+              $('#img-box').attr('src',data);
+            }
+            else{
+              $('#img-box').attr('src', '');
+              alert("No image found. Please search something else.");
+            }
+        }
+    });
+})
+</script>
+
+</body>
+</html>
