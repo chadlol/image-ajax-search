@@ -11,15 +11,17 @@
     text-align: center;
     margin:auto;
   }
+
 </style>
 <body>
 
 <div>
-<img id='img-box' src='' height='400'>
+<img id='img-box' src='' height='400px'>
 <br/>
 <input type="text" id="search-query">
 <input type="submit" id="search-button" value="Search"><br>
-<small>Search for an image</small>
+<small>Search for an image</small><br>
+<a href="https://github.com/chadlol/image-ajax-search"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" height="50px" width="50px" alt="github repo" title="github repo" /></a>
 </div>
 
 <script>
